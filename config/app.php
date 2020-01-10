@@ -167,6 +167,7 @@ return [
          */
         Spatie\Permission\PermissionServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        VueGenerators\ServiceProvider::class,
 
         /*
          * Application Service Providers...

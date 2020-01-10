@@ -16,3 +16,11 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+// Authentification route goes here
+Route::post('/login', 'Auth\LoginController@login');
+
+// Data resource route goes here
+Route::group(['middleware' => 'auth:api'], function() {
+    Route::resource('/category', 'CategoryController')->except(['show']);
+});
